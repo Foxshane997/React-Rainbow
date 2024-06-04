@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import React, { useState } from 'react'
 import './App.css';
 
+// Import Data
 import ColorBlock from './ColorBlock';
 import ColorForm from './ColorForm';
 
@@ -20,6 +21,7 @@ function App(){
       )
     })
 
+  // The ability to add colors to the array
     const addColor = (newColor) => {
       setColors(['violet', 'blue',
       'lightblue', 'green',
@@ -27,6 +29,7 @@ function App(){
       'orange', 'red', newColor])
     }
 
+  
     return (
       <div className="App">
         {colors.map((color, i) => 
