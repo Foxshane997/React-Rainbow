@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React, { useState } from 'react'
 import './App.css';
 
@@ -17,24 +16,18 @@ function App(){
 
     let colorMap = colors.map((color, i) => {
       return (
-        <ColorBlock color={color}/>
+        <ColorBlock key={i} color={color}/>
       )
     })
 
   // The ability to add colors to the array
-    const addColor = (newColor) => {
-      setColors(['violet', 'blue',
-      'lightblue', 'green',
-      'greenyellow', 'yellow',
-      'orange', 'red', newColor])
-    }
-
+  const addColor = (newColor) => {
+    setColors([...colors, newColor]);
+  };
   
     return (
       <div className="App">
-        {colors.map((color, i) => 
-          <ColorBlock key={i} color={color} />
-        )}
+        {colorMap}
         <ColorForm addColor={addColor}/>
       </div>  
     )
